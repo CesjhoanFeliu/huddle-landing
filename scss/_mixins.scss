@@ -1,0 +1,154 @@
+@use "variables";
+@mixin desktop-view($width, $height: unset, $font-size: unset) {
+  @media (min-width: 1440px) {
+    width: $width;
+    height: $height;
+    font-size: $font-size;
+    @content;
+  }
+}
+
+@mixin button(
+  $bg-color,
+  $br-color,
+  $fn-color,
+  $width,
+  $height,
+  $font-w: unset,
+  $center
+) {
+  background-color: $bg-color;
+  border-style: none;
+  border: 1px solid $br-color;
+  border-radius: 50px;
+  color: $fn-color;
+  width: $width;
+  height: $height;
+  font-weight: $font-w;
+  display: block;
+  @if $center == true {
+    margin: 0 auto;
+  }
+  @content;
+}
+
+@mixin button-hover($bg-color) {
+  &:hover {
+    cursor: pointer;
+    background-color: $bg-color;
+    color: variables.$White;
+  }
+}
+
+@mixin stats($Width-icon) {
+  &__content {
+    width: 210px;
+    margin-bottom: 90px;
+  }
+  &__content--img {
+    width: $Width-icon;
+  }
+  &__content--h2 {
+    font-size: 4em;
+    text-transform: lowercase;
+    color: variables.$Very-Dark-Cyan;
+  }
+  &__content--description {
+    font-size: 1em;
+    text-align: center;
+
+    font-family: variables.$Body-font;
+    color: hsl(215, 10%, 56%);
+    @content;
+  }
+  .short {
+    width: 69px;
+    margin: auto;
+  }
+}
+
+@mixin stats-desktop() {
+  @media (min-width: 1439px) {
+    flex-direction: row;
+    justify-content: space-around;
+    &__content--description {
+      margin-top: 10px;
+      font-size: 1.4em;
+    }
+    .short {
+      width: auto;
+    }
+  }
+}
+
+@mixin banner($url-top, $url-bottom) {
+  background: {
+    image: url($url-top), url($url-bottom);
+    repeat: no-repeat, no-repeat;
+    position-y: top, bottom;
+  }
+}
+
+@mixin flex-section($padding: 150px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-bottom: 180px;
+  padding: $padding 0px;
+  &--img {
+    width: 246px;
+    margin-bottom: 55px;
+  }
+  &--description {
+    text-align: center;
+  }
+  &--h2 {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  &--p {
+    font-size: 0.9em;
+    width: 330px;
+  }
+}
+
+@mixin flex-section-desktop($direction: row) {
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-direction: $direction;
+    &__bg--img {
+      top: -112px;
+      width: 100%;
+    }
+    &--img {
+      width: 527px;
+    }
+    &--description {
+      text-align: left;
+      font-size: 1.1em;
+      width: 495px;
+    }
+    &--h2 {
+      font-size: 2.3em;
+      text-align: left;
+    }
+    &--p {
+      font-size: 0.9em;
+      width: 330px;
+    }
+  }
+}
+
+@mixin banner-desktop($url-top, $url-bottom) {
+  @media (min-width: 1440px) {
+    background: {
+      image: url($url-top), url($url-bottom);
+      repeat: no-repeat, no-repeat;
+      position-y: top, bottom;
+      height: 100%;
+    }
+  }
+}
