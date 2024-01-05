@@ -36,7 +36,6 @@ body {
   width: 100%;
   margin: 0 auto 25px;
   @include mixins.desktop-view(100%);
-  border: 1px solid red;
 }
 
 .navbar {
