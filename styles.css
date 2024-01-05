@@ -27,6 +27,7 @@ h5 {
 body {
   font-family: "Open Sans", sans-serif;
   color: hsl(192, 100%, 9%);
+  height: 100vh;
 }
 
 .newsletter__contact__social-media--img {
@@ -35,12 +36,13 @@ body {
 }
 
 .main-container {
-  width: 375px;
+  width: 100%;
   margin: 0 auto 25px;
+  border: 1px solid red;
 }
 @media (min-width: 1440px) {
   .main-container {
-    width: 1440px;
+    width: 100%;
     height: unset;
     font-size: unset;
   }
@@ -50,6 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 25px auto 100px;
+  width: 400px;
 }
 @media (min-width: 1440px) {
   .navbar {
@@ -59,8 +62,8 @@ body {
   }
 }
 .navbar__logo {
-  width: 95px;
-  height: 16px;
+  width: 135px;
+  height: 24px;
 }
 @media (min-width: 1440px) {
   .navbar__logo {
@@ -166,6 +169,8 @@ body {
   align-items: center;
   justify-content: center;
   padding-bottom: 4em;
+  background-size: 100% 20%;
+  background-width: 100%;
   background-image: url(unset), url("../images/bg-section-top-mobile-1.svg");
   background-repeat: no-repeat, no-repeat;
   background-position-y: top, bottom;
@@ -271,6 +276,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 150px 0px;
+  background-size: 100% 20%;
+  background-width: 100%;
   background-image: url("../images/bg-section-bottom-mobile-1.svg"), url("../images/bg-section-top-mobile-2.svg");
   background-repeat: no-repeat, no-repeat;
   background-position-y: top, bottom;
@@ -385,6 +392,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 16em 0px;
+  background-size: 100% 20%;
+  background-width: 100%;
   background-image: url("../images/bg-section-bottom-mobile-2.svg"), url("../images/bg-footer-top-mobile.svg");
   background-repeat: no-repeat, no-repeat;
   background-position-y: top, bottom;
@@ -408,7 +417,7 @@ body {
 }
 .section__your-community--h2 {
   font-weight: 800;
-  font-size: 1.4em;
+  font-size: 2.4em;
   width: 80%;
   margin-bottom: 50px;
 }
@@ -484,9 +493,16 @@ footer {
   width: 87%;
   line-height: 1.6em;
 }
+.newsletter__section--form {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
 .newsletter__section--input {
   height: 44px;
+  /*usamos Width y Max-Witdh para hacer que sea responsive en mobile*/
   width: 100%;
+  max-width: 550px;
   border-radius: 4px;
   border-style: none;
   outline: none;
@@ -498,6 +514,7 @@ footer {
     width: 100%;
     height: unset;
     font-size: unset;
+    height: 44px;
   }
 }
 .newsletter__section--input--p {

@@ -25,6 +25,7 @@ h5 {
 body {
   font-family: variables.$Body-font;
   color: variables.$Very-Dark-Cyan;
+  height: 100vh;
 }
 .newsletter__contact__social-media--img {
   width: 30px;
@@ -32,20 +33,22 @@ body {
 }
 
 .main-container {
-  width: 375px;
+  width: 100%;
   margin: 0 auto 25px;
-  @include mixins.desktop-view(1440px);
+  @include mixins.desktop-view(100%);
+  border: 1px solid red;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   margin: 25px auto 100px;
+  width: 400px;
   @include mixins.desktop-view(1300px);
 
   &__logo {
-    width: 95px;
-    height: 16px;
+    width: 135px;
+    height: 24px;
     @include mixins.desktop-view(240px, 40px);
   }
   &__button {
@@ -147,7 +150,7 @@ body {
 
   &--h2 {
     font-weight: 800;
-    font-size: 1.4em;
+    font-size: 2.4em;
     width: 80%;
     margin-bottom: 50px;
   }
@@ -206,6 +209,7 @@ footer {
 
 .newsletter__section {
   margin-top: 1em;
+
   &--h2 {
     margin-bottom: 0.7em;
     font-weight: 300;
@@ -221,9 +225,16 @@ footer {
     line-height: 1.6em;
   }
 
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
   &--input {
     height: 44px;
+    /*usamos Width y Max-Witdh para hacer que sea responsive en mobile*/
     width: 100%;
+    max-width: 550px;
     border-radius: 4px;
     border-style: none;
     outline: none;
@@ -231,6 +242,7 @@ footer {
     box-sizing: border-box;
 
     @include mixins.desktop-view(100%) {
+      height: 44px;
     }
   }
   &--input--p {

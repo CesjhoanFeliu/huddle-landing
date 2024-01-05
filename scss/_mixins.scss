@@ -82,7 +82,9 @@
 }
 
 @mixin banner($url-top, $url-bottom) {
+  background-size: 100% 20%;
   background: {
+    width: 100%;
     image: url($url-top), url($url-bottom);
     repeat: no-repeat, no-repeat;
     position-y: top, bottom;
